@@ -7,6 +7,10 @@ To enable at boot/init Script - change no to yes in:
 
 Configuration is located at /etc/graylog2/server.conf
 
+you need to set:
+
+ # password_secret
+ # root_password_sha2
 
 For an running Graylog2-Server you will need:
 
