@@ -20,3 +20,7 @@ In Wheezy you can use the MongoDB Packages in Wheezy:
 Elasticsearch is yet not available in Debian, grab it from upstream:
 
  # http://www.elasticsearch.org/download/
+
+For more information about installation:
+
+# http://support.torch.sh/help/kb/graylog2-server/installing-graylog2-server-v0200-previewx-on-nix-systems

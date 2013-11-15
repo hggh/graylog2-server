@@ -15,14 +15,16 @@
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 DESC="Graylog2 Server"
 NAME=graylog2-server
-DAEMON=/opt/graylog2/server/graylog2-server.jar
+JAR_FILE=/opt/graylog2/server/graylog2-server.jar
+DAEMON=/usr/bin/java
 PIDFILE=/var/run/$NAME.pid
-DAEMON_ARGS="-p $PIDFILE -c /etc/graylog2/server.conf"
+DAEMON_ARGS="-jar $JAR_FILE -p $PIDFILE -f /etc/graylog2/server.conf"
 SCRIPTNAME=/etc/init.d/$NAME
 RUN=no
 
 # Exit if the package is not installed
-[ -e "$DAEMON" ] || exit 0
+[ -e "$JAR_FILE" ] || exit 0
+[ -x "$DAEMON" ] || exit 0
 
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
 
@@ -39,8 +41,8 @@ do_start()
 
 		exit 0
 	fi
-	start-stop-daemon --start --quiet --pidfile $PIDFILE \
-		--startas java -jar $DAEMON -- $DAEMON_ARGS \
+	start-stop-daemon --start --background --quiet --no-close --pidfile $PIDFILE \
+		--startas $DAEMON -- $DAEMON_ARGS >> /var/log/graylog2/server.log \
 		|| return 2
 }
 

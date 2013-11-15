@@ -1,2 +1,3 @@
 opt/graylog2/server
 etc/graylog2
+var/log/graylog2
