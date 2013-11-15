@@ -1,0 +1,22 @@
+Graylog2-Server for Debian
+============================
+
+To enable at boot/init Script - change no to yes in:
+
+# /etc/default/graylog2-server
+
+Configuration is located at /etc/graylog2/server.conf
+
+
+For an running Graylog2-Server you will need:
+
+ - MongoDB-Server
+ - Elasticsearch
+
+In Wheezy you can use the MongoDB Packages in Wheezy:
+
+# apt-get install mongodb-server
+
+Elasticsearch is yet not available in Debian, grab it from upstream:
+
+ # http://www.elasticsearch.org/download/

@@ -1,0 +1,2 @@
+graylog2-server.jar opt/graylog2/server
+plugin opt/graylog2/server
