@@ -4,6 +4,6 @@ set -e
 
 # ensure 0600 for configuration
 
-chmod 600 /etc/graylog2/server.conf
+test -e /etc/graylog2/server.conf && chmod 600 /etc/graylog2/server.conf
 
 #DEBHELPER#
