@@ -14,6 +14,7 @@ password_secret =
 # You MUST specify a hash password for the root user (which you only need to initially set up the
 # system and in case you lose connectivity to your authentication backend)
 # Create one by using for example: echo -n yourpassword | shasum -a 256
+# and put the resulting hash value into the following line
 root_password_sha2 =
 
 # Set plugin directory here (relative or absolute)
@@ -25,9 +26,6 @@ rest_listen_uri = http://127.0.0.1:12900/
 # This will be promoted in the cluster discovery APIs and other nodes may try to connect on this
 # address. (see rest_listen_uri)
 #rest_transport_uri = http://192.168.1.1:12900/
-
-# Socket receive buffer size (bytes) for UDP syslog and UDP GELF.
-udp_recvbuffer_sizes = 1048576
 
 # Embedded elasticsearch configuration file
 # pay attention to the working directory of the server, maybe use an absolute path here
@@ -43,7 +41,6 @@ elasticsearch_max_number_of_indices = 20
 # How many ElasticSearch shards and replicas should be used per index? Note that this only applies to newly created indices.
 elasticsearch_shards = 4
 elasticsearch_replicas = 0
-
 
 # settings to be passed to elasticsearch's client (overriding those in the provided elasticsearch_config_file)
 # all these
