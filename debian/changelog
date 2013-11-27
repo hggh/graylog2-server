@@ -1,4 +1,10 @@
-graylog2-server (0.20.0preview.6-1) unstable; urgency=low
+graylog2-server (0.20.0~preview.7-1) unstable; urgency=low
+
+  * New Upstream Release
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Wed, 27 Nov 2013 19:55:04 +0100
+
+graylog2-server (0.20.0~preview.6-1) unstable; urgency=low
 
   * Initial Debian Release
 
