@@ -4,6 +4,7 @@ set -e
 
 if [ "$1" = purge ]; then
 	rm -rf /etc/graylog2/server/node-id
+	rm -rf /etc/graylog2/server/server.conf
 	rm -rf /var/log/graylog2-server
 	rm -rf /var/run/graylog2-server
 fi
