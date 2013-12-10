@@ -3,7 +3,9 @@
 set -e
 
 if [ "$1" = purge ]; then
-	rm -f /etc/graylog2/server-node-id
+	rm -rf /etc/graylog2/server/node-id
+	rm -rf /var/log/graylog2-server
+	rm -rf /var/run/graylog2-server
 fi
 
 #DEBHELPER#

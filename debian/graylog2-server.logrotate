@@ -1,4 +1,4 @@
-/var/log/graylog2/server.log {
+/var/log/graylog2-server/*.log {
 	weekly
 	missingok
 	rotate 7

@@ -4,7 +4,7 @@
 	dh $@
 
 override_dh_install:
-	cp $(CURDIR)/graylog2.conf.example $(CURDIR)/debian/graylog2-server/etc/graylog2/server.conf
+	cp $(CURDIR)/graylog2.conf.example $(CURDIR)/debian/graylog2-server/etc/graylog2/server/server.conf
 	dh_install
 
 override_dh_installinit:

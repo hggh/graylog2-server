@@ -2,8 +2,31 @@
 
 set -e
 
-# ensure 0600 for configuration
+if [ "$1" = configure ]; then
+        if ! getent passwd _graylog2 > /dev/null; then
+                adduser --system --quiet --home /opt/graylog2 \
+                        --no-create-home --shell /bin/false --force-badname \
+                        --group --gecos "Graylog2 User" _graylog2
+        fi
+        test -e /var/log/graylog2-server || mkdir -m 0755 -p /var/log/graylog2-server
+        if ! dpkg-statoverride --list /var/log/graylog2-server >/dev/null 2>&1; then
+                dpkg-statoverride --update --add _graylog2 _graylog2 0755 /var/log/graylog2-server
+        fi
 
-test -e /etc/graylog2/server.conf && chmod 600 /etc/graylog2/server.conf
+fi
+
+# ensure proper permissions
+if [ -e /etc/graylog2/server/server.conf ]; then
+	chmod 0640 /etc/graylog2/server/server.conf
+	chown _graylog2:_graylog2 /etc/graylog2/server/server.conf
+fi
+
+# generate node-id if not available
+if [ ! -e /etc/graylog2/server/node-id ]; then
+	uuidgen > /etc/graylog2/server/node-id
+	chmod 0640 /etc/graylog2/server/node-id
+	chown _graylog2:_graylog2 /etc/graylog2/server/node-id
+fi
+
 
 #DEBHELPER#
