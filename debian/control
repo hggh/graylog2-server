@@ -10,7 +10,8 @@ Package: graylog2-server
 Architecture: all
 Depends: ${misc:Depends},
  java7-runtime-headless | java7-runtime,
- uuid-runtime
+ uuid-runtime,
+ adduser
 Suggests: mongodb-server, elasticsearch
 Description: Graylog2 Loggingframework - Server
  Graylog2 is an open source syslog implementation that stores your logs
