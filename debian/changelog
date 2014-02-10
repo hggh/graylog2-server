@@ -1,3 +1,11 @@
+graylog2-server (0.20.0~rc.2-1) unstable; urgency=low
+
+  * d/control: better java depends line
+  * Imported Upstream version 0.20.0~rc.2
+  * d/p/01_graylog-conf.patch: refreshed patch
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Mon, 10 Feb 2014 18:31:14 +0100
+
 graylog2-server (0.20.0~rc.1.1-1) unstable; urgency=low
 
   * Imported Upstream version 0.20.0~rc.1.1
