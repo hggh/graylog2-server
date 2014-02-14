@@ -9,7 +9,7 @@ Homepage: http://www.graylog2.org
 Package: graylog2-server
 Architecture: all
 Depends: ${misc:Depends},
- openjdk-7-jre-headless | java7-runtime-headless | java7-runtime,
+ java7-runtime-headless,
  uuid-runtime,
  adduser
 Suggests: mongodb-server, elasticsearch
