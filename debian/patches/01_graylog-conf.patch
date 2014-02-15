@@ -18,7 +18,7 @@ Upstream: no
  
  # Set plugin directory here (relative or absolute)
 -plugin_dir = plugin
-+plugin_dir = /opt/graylog2/server/plugin
++plugin_dir = /usr/share/graylog2-server/plugin
  
  # REST API listen URI. Must be reachable by other graylog2-server nodes if you run a cluster.
  rest_listen_uri = http://127.0.0.1:12900/
