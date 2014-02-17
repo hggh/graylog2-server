@@ -1,3 +1,11 @@
+graylog2-server (0.20.0~rc.3-2) unstable; urgency=low
+
+  * d/copyright: more information, proper license of Graylog2 itself
+  * d/control: added Vcs Urls
+  * move jar from opt to usr/share
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Mon, 17 Feb 2014 21:48:12 +0100
+
 graylog2-server (0.20.0~rc.3-1) unstable; urgency=low
 
   * Imported Upstream version 0.20.0~rc.3
