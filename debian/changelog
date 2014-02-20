@@ -1,3 +1,9 @@
+graylog2-server (0.20.0-1) unstable; urgency=low
+
+  * Imported Upstream version 0.20.0
+
+ -- Jonas Genannt <jonas.genannt@capi2name.de>  Wed, 19 Feb 2014 19:07:24 +0100
+
 graylog2-server (0.20.0~rc.3-2) unstable; urgency=low
 
   * d/copyright: more information, proper license of Graylog2 itself
