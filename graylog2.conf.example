@@ -84,6 +84,13 @@ allow_leading_wildcard_searches = false
 #elasticsearch_discovery_zen_ping_multicast_enabled = false
 #elasticsearch_discovery_zen_ping_unicast_hosts = 192.168.1.203:9300
 
+# the following settings allow to change the bind addresses for the elasticsearch client in graylog2
+# these settings are empty by default, letting elasticsearch choose automatically,
+# override them here or in the 'elasticsearch_config_file' if you need to bind to a special address
+# refer to http://www.elasticsearch.org/guide/en/elasticsearch/reference/0.90/modules-network.html for special values here
+# elasticsearch_network_host =
+# elasticsearch_network_bind_host =
+# elasticsearch_network_publish_host =
 
 # Analyzer (tokenizer) to use for message and full_message field. The "standard" filter usually is a good idea.
 # All supported analyzers are: standard, simple, whitespace, stop, keyword, pattern, language, snowball, custom
@@ -120,6 +127,14 @@ processor_wait_strategy = blocking
 # Start server with --statistics flag to see buffer utilization.
 # Must be a power of 2. (512, 1024, 2048, ...)
 ring_size = 1024
+
+# EXPERIMENTAL: Dead Letters
+# Every failed indexing attempt is logged by default and made visible in the web-interface. You can enable
+# the experimental dead letters feature to write every message that was not successfully indexed into the
+# MongoDB "dead_letters" collection to make sure that you never lose a message. The actual writing of dead
+# letter should work fine already but it is not heavily tested yet and will get more features in future
+# releases.
+dead_letters_enabled = false
 
 # MongoDB Configuration
 mongodb_useauth = false
